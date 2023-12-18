@@ -21,6 +21,7 @@
                     <br />
                     密　　碼：<asp:TextBox ID="txtPass" runat="server" TextMode="Password"></asp:TextBox>
                     <br />
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="Forgot.aspx">忘記密碼</asp:HyperLink>
                     <asp:Button ID="Button1" runat="server" Font-Size="18px" Text="登入" OnClick="Button1_Click" />
                     <asp:Label ID="lblOutput" runat="server"></asp:Label>
                 </asp:Panel>

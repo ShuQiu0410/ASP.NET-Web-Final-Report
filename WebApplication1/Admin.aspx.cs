@@ -49,7 +49,7 @@ namespace WebApplication1
                 //lblOutput.Text+= no;
                 //連接 字串
                 strDbCon = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Server.MapPath("App_Data\\\\LibraryData.mdf") + ";Integrated Security=True";
-                //Update 字串
+                //Delete 字串
                 strSQL = "DELETE FROM Rant WHERE (Id='" + no + "')";
                 //strSQL = "UPDATE Book SET Is_rant = false WHERE (ISBN='" + no + "')";
                 //連接

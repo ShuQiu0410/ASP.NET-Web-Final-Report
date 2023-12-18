@@ -14,6 +14,11 @@ namespace WebApplication1
         {
             Label1.Text = "本書簡介 ：<br/>";
             Label1.Text += File.ReadAllText("C:\\Users\\user\\Desktop\\WebApplication1\\WebApplication1\\BookTxt\\"+ Request.QueryString["id"].ToString() +".txt");
+
+            if(Request.QueryString["Id"] == "A001")
+            {
+                this.form1.Style.Value = "background-color: lightblue;";
+            }
         }
     }
 }
