@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +18,7 @@ namespace WebApplication1
         {
             if(txtIndex.Text != null)
             {
+                //查詢字串
                 string cmd = "SELECT * FROM [Book] WHERE ([" + RadioButtonList1.SelectedValue + "] LIKE '%' + @Id + '%')";
                 SqlDataSource1.SelectCommand = cmd;
                 SqlDataSource1.DataBind();

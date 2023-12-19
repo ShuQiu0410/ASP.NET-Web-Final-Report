@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Admin.aspx" />
     <Content Include="Details.aspx" />
+    <Content Include="Forget.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="App_Data\LibraryData.mdf" />
     <Content Include="App_Data\LibraryData_log.ldf">
@@ -95,6 +96,13 @@
     </Compile>
     <Compile Include="Details.aspx.designer.cs">
       <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forget.aspx.cs">
+      <DependentUpon>Forget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forget.aspx.designer.cs">
+      <DependentUpon>Forget.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

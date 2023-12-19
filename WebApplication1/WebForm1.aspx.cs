@@ -12,6 +12,7 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //just for test
             string a = File.ReadAllText("D:\\1208\\WebApplication1\\WebApplication1\\BookTxt\\A001.txt");
             Label1.Text = a;
         }
