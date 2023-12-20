@@ -16,6 +16,9 @@ namespace WebApplication1
             if (Session["Admin"] == null)
             {
                 Response.Redirect("Login.aspx");
+            }else
+            {
+                lblID.Text = "目前登入的是 : " + Session["Admin"];
             }
         }
 

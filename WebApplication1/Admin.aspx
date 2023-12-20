@@ -9,6 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:Label ID="lblID" runat="server"></asp:Label>
         <div style="float: right">
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="登出" />
         </div>

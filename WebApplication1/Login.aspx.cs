@@ -36,39 +36,43 @@ namespace WebApplication1
             
             */
             //連接 字串
-            strDbCon = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Server.MapPath("App_Data\\LibraryData.mdf") + ";Integrated Security=True";
-            //Update 字串
-            strSQL = "SELECT Password FROM Admin WHERE Id = "+ txtID.Text;
-            //連接
-            objCon = new SqlConnection(strDbCon);
-            //命令
-            objCmd = new SqlCommand(strSQL, objCon);
-            //打開
-            objCon.Open();
-            object result = objCmd.ExecuteScalar();
-            if( result != null)
+            if(txtPass.Text == null || txtID.Text == null)
             {
-                string passInput = txtPass.Text + " ";
-                string password = result.ToString();
-                if (password == passInput) //正確
+                strDbCon = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Server.MapPath("App_Data\\LibraryData.mdf") + ";Integrated Security=True";
+                //Update 字串
+                strSQL = "SELECT Password FROM Admin WHERE Id = "+ txtID.Text;
+                //連接
+                objCon = new SqlConnection(strDbCon);
+                //命令
+                objCmd = new SqlCommand(strSQL, objCon);
+                //打開
+                objCon.Open();
+                object result = objCmd.ExecuteScalar();
+                if( result != null)
                 {
-                    lblOutput.Text = "DEBUG1";
-                    Session["Admin"] = txtID;
-                    Response.Redirect("Admin.aspx");
+                    string passInput = txtPass.Text + " ";
+                    string password = result.ToString();
+                    if (password == passInput) //正確
+                    {
+                        lblOutput.Text = "DEBUG1";
+                        Session["Admin"] = txtID;
+                        Response.Redirect("Admin.aspx");
+                    }
+                    else //密碼錯誤
+                    {
+                        //lblOutput.Text = "DEBUG2";
+                        lblOutput.Text = "密碼錯誤";
+                        result = null;
+                    }
                 }
-                else //密碼錯誤
+                else //回傳資料庫密碼值為空
                 {
-                    //lblOutput.Text = "DEBUG2";
-                    lblOutput.Text = "密碼錯誤";
-                    result = null;
+                    //lblOutput.Text = "DEBUG3";
+                    lblOutput.Text = "請輸入正確ID";
                 }
+                
+
             }
-            else //回傳資料庫密碼值為空
-            {
-                //lblOutput.Text = "DEBUG3";
-                lblOutput.Text = "請輸入正確ID";
-            }
-            
         }
     }
 }
